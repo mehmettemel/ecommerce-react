@@ -1,0 +1,24 @@
+ this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+      createUserProfileDocument(user)
+      // this.setState({ currentUser: user })
+      // console.log(user)
+      // console.log(this.state.currentUser)
+    })
+
+    burder user.uid kullanarak firebase utils içinde verilerin firestore içine eklenmesini sağladık.
+
+    
+
+      handleSubmit = async (event) => {
+    event.preventDefault()
+    const { email, password } = this.state
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password)
+      this.setState({ email: '', password: '' })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  bu metodla signup ile olusturdugumuz databasedeki kullanıcı sıfre ile sign in yapabildik
