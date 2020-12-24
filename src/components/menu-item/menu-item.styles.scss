@@ -1,3 +1,4 @@
+@import '../../styles/breakpoints.scss';
 .menu-item {
   position: relative;
   min-width: 30%;
@@ -24,6 +25,9 @@
 
   &.large {
     height: 380px;
+    @include media('<=tablet') {
+      flex: 100%;
+    }
   }
 
   &:first-child {

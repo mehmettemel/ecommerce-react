@@ -1,3 +1,4 @@
+@import '../../styles/breakpoints.scss';
 .checkout-item {
   width: 100%;
   display: flex;
@@ -6,11 +7,25 @@
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  @include media('<=tablet') {
+    flex-direction: column;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
 
   .image-container {
     width: 23%;
     padding-right: 15px;
+    @include media('<=tablet') {
+      min-width: 50px;
+      height: 50px;
+      padding-bottom: 11px;
+    }
     img {
+      @include media('<=tablet') {
+        border-radius: 100%;
+      }
       border-radius: 12px;
       width: 100%;
       height: 100%;
@@ -20,10 +35,19 @@
   .quantity,
   .price {
     width: 23%;
+    @include media('<=tablet') {
+      min-width: 43%;
+      text-align: center;
+      padding: 11px 5px;
+    }
   }
 
   .quantity {
     display: flex;
+    @include media('<=tablet') {
+      justify-content: center;
+      align-items: center;
+    }
 
     .arrow {
       cursor: pointer;
@@ -37,5 +61,8 @@
   .remove-button {
     padding-left: 12px;
     cursor: pointer;
+    @include media('<=tablet') {
+      padding-left: 0;
+    }
   }
 }

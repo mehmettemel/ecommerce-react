@@ -1,9 +1,13 @@
+@import './styles/breakpoints.scss';
 * {
   box-sizing: border-box;
 }
 
 body {
   padding: 20px 60px;
+  @include media('<=tablet') {
+    padding: 0;
+  }
 }
 
 a {
